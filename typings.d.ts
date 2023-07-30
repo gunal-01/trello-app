@@ -5,16 +5,16 @@ interface Board {
 type TypedColumn = "todo" | "inprogress" | "done"
 
 interface Column {
-    id: TypedColumn,
-    todos: Todo[]
+    id: TypedColumn;
+    todos: Todo[];
 }
 
 interface Todo extends Models.Document {
-    $id: string,
-    $createdAt: string,
-    title: string,
-    status: TypedColumn,
-    image?: string,
+    $id: string;
+    $createdAt: string;
+    title: string;
+    status: TypedColumn;
+    image?: Image;
 }
 
 interface Image {
