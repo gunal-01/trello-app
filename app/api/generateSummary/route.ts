@@ -4,8 +4,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
     // todos in hte body of the POST req
     const { todos } = await request.json();
-    console.log(todos);
-
+    
     // communicate with openAI GPT
     const response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo", 
@@ -15,7 +14,7 @@ export async function POST(request: Request) {
         messages: [
             {
                 role: "system",
-                content: `When responding, welcome the user always as Mr.Gunal and say welcome to the Todo App!
+                content: `When responding, welcome the user always as Hey dude and say welcome to the Todo App!
                 Limit the response to 200 characters`,
             },
             {
@@ -28,9 +27,6 @@ export async function POST(request: Request) {
     });
 
     const { data } = response;
-
-    console.log("DATA IS:", data);
-    console.log(data.choices[0].message);
 
     return NextResponse.json(data.choices[0].message);
 
