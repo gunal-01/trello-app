@@ -51,13 +51,6 @@ return (
                         -z-50
                         "
                     />
-                <Image
-                src="https://links.papareact.com/c2cdd5"
-                alt="Trello Logo"
-                width={150}
-                height={50}
-                className="w=44 md:w=56 pb-10 md:pb-0 object-contain"
-                />
                 <div className="flex items-center 
                 space-x-5 flex-1 justify-end
                 w-full">
